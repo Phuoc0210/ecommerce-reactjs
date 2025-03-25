@@ -1,0 +1,35 @@
+@use './variables.module' as *;
+
+@mixin radius_common($radius: 10px) {
+  border-radius: $radius;
+}
+
+@mixin icon_custom($color: $white_color, $w: 16px, $h: 16px) {
+  color: $color;
+  width: $w;
+  height: $h;
+}
+
+@mixin flex_custom($justify, $align, $gap: 10px, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-direction: $direction;
+}
+
+@mixin resize_img($w, $h) {
+  width: $w;
+  height: $h;
+}
+@mixin button_default() {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+}

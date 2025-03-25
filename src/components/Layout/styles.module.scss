@@ -1,0 +1,6 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.line {
+  border-bottom: 1px solid $gray_color;
+}

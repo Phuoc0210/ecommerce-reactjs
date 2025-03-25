@@ -1,0 +1,14 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.boxIcon {
+  @include radius_common(50%);
+  background-color: $primary_color;
+  width: 26px;
+  height: 26px;
+  @include flex_custom(center, center, 0px);
+}
+
+.iconDefault {
+  @include icon_custom();
+}

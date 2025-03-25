@@ -1,0 +1,41 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.logo {
+  @include flex_custom(center, center, 0);
+  .img_logo {
+    object-fit: cover;
+    height: auto;
+    max-height: 72px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.cart_user {
+  display: flex;
+  width: 50%;
+}
+
+.header {
+  @include flex_custom(center, stretch, 0);
+}
+
+.miniHeader {
+  @include flex_custom(center, stretch, 0);
+  .menu {
+    @include flex_custom(center, center, 0);
+    svg {
+      width: 3.5rem;
+      height: 3.5rem;
+      color: $white_color;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  header {
+    background-color: $primary_color;
+  }
+}

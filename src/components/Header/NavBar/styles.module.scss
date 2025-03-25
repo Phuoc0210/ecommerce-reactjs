@@ -1,0 +1,109 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.navbar {
+  display: none;
+  border: 1px solid $gray_color;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  .navbar_menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    @include flex_custom(center, center, 0px);
+    .navbar_item {
+      width: 12rem;
+      height: 4rem;
+      @include flex_custom(center, center, 0px);
+      .navbar_link {
+        text-decoration: none;
+        color: $text_color;
+      }
+    }
+    .navbar_item:hover {
+      color: $primary_color;
+      .navbar_link {
+        color: $text_hover;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    display: block !important;
+  }
+}
+.navbar_show {
+  display: block;
+  animation: scaleIn 0.2s ease-in-out;
+}
+.navbar_hide {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    position: fixed;
+    top: 11.2rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: $white_color;
+    color: $text_color;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    .navbar_menu {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      @include flex_custom(center, center, 0px, column);
+      .navbar_item {
+        height: 4rem;
+        border-bottom: 1px solid $gray_color;
+        @include flex_custom(center, center, 0px);
+        .navbar_link {
+          @include flex_custom(center, center, 0px);
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: $text_color;
+        }
+      }
+      .navbar_item:hover {
+        color: $primary_color;
+        .navbar_link {
+          color: $text_hover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

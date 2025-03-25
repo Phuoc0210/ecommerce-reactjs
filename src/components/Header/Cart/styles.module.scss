@@ -1,0 +1,75 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.cart {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 8px;
+  padding: 10px 16px;
+  background: $primary_color;
+  color: $white_color;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $secondary_color;
+  }
+
+  .cartIcon {
+    font-size: 2.4rem;
+  }
+
+  .cartText {
+    font-weight: 500;
+  }
+
+  .cartCount {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background: white;
+    color: $primary_color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    @include flex_custom(center, center, 0);
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+@media (max-width: 991px) {
+  .cart {
+    padding: 0;
+    @include flex_custom(center, center, 0);
+    .cartText {
+      display: none;
+    }
+    .cartCount {
+      top: 20%;
+      right: 10%;
+      width: 30%;
+      height: 20%;
+    }
+    .cartIcon {
+      svg {
+        @include resize_img(3.5rem, 3.5rem);
+      }
+    }
+    &:hover {
+      background: $primary_color;
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .cart {
+    @include flex_custom(center, center, 0);
+    .cartText {
+      display: none;
+    }
+  }
+}

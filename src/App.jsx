@@ -1,7 +1,11 @@
-import "./App.css";
+import MainLayout from '@components/Layout/Layout';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <MainLayout>content</MainLayout>
+    </>
+  );
 }
 
 export default App;
