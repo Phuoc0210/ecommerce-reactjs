@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { dataMenu } from '../constants';
 import styles from './styles.module.scss';
 
@@ -12,13 +13,13 @@ function HeaderNavbar({ isOpen }) {
   } = styles;
 
   return (
-    <nav className={`${navbar} ${isOpen ? navbar_show : navbar_hide}`}>
+    <nav className={`${navbar} ${isOpen ? navbar_show : ''}`}>
       <ul className={navbar_menu}>
         {dataMenu.map((item, index) => (
           <li key={index} className={navbar_item}>
-            <a href={item.href} className={navbar_link}>
+            <Link to={item.href} className={navbar_link}>
               {item.content}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

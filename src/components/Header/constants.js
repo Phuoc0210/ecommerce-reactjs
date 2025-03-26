@@ -9,10 +9,10 @@ const dataBoxIcon = [
 ];
 
 const dataMenu = [
-  { content: 'Home', href: '#' },
-  { content: 'Pets', href: '#' },
-  { content: 'About Us', href: '#' },
-  { content: 'Contracts', href: '#' },
+  { content: 'Home', href: '/home' },
+  { content: 'Pets', href: '/shop' },
+  { content: 'About Us', href: '/about' },
+  { content: 'Contracts', href: '/contact' },
 ];
 
 const benefits = [

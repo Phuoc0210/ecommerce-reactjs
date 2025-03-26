@@ -2,7 +2,6 @@
 @use '@styles/variables.module' as *;
 
 .navbar {
-  display: none;
   border: 1px solid $gray_color;
   color: #000;
   font-size: 1.6rem;
@@ -36,16 +35,21 @@
     display: block !important;
   }
 }
+@media (max-width: 991px) {
+  .navbar {
+    display: none;
+  }
+}
 .navbar_show {
   display: block;
   animation: scaleIn 0.2s ease-in-out;
 }
-.navbar_hide {
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
+// .navbar_hide {
+//   visibility: hidden;
+//   opacity: 0;
+//   transform: scale(0.8);
+//   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+// }
 
 @media (max-width: 991px) {
   .navbar {

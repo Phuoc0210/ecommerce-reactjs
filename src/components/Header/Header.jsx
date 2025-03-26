@@ -10,6 +10,7 @@ import Benefits from './Benefit/Benefits';
 import Account from './Account/Account';
 import { useEffect, useState } from 'react';
 import HeaderNavbar from './NavBar/NavBar';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const {
@@ -24,12 +25,20 @@ function Header() {
     menu,
   } = styles;
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <header>
       <Container fluid='xl' className='d-none d-lg-block'>
         <Row className={header}>
           <Col lg='2' className={logo}>
-            <img className={img_logo} src={Logo} alt='My Logo' />
+            <img
+              className={img_logo}
+              src={Logo}
+              alt='My Logo'
+              onClick={() => {
+                navigate('/');
+              }}
+            />
           </Col>
           <Col
             className={`${search} d-none d-lg-flex`}
