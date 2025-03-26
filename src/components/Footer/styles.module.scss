@@ -1,0 +1,121 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.wrapperFooter {
+  border: 1px solid $gray_color;
+  padding: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  .infoFooter {
+    @include flex_custom(center, center, 0);
+    .intro {
+      @include flex_custom(center, start, 0.8rem, column);
+      .logo {
+        .img_logo {
+          object-fit: cover;
+          height: auto;
+          max-height: 72px;
+          width: auto;
+          max-width: 100%;
+        }
+      }
+    }
+    .policy {
+      .policyMenu,
+      .securityMenu {
+        list-style: none;
+        padding: 0;
+      }
+
+      .policyItem,
+      .securityItem {
+        font-size: 1.4rem;
+        color: $text_color;
+        margin: 0.5rem 0;
+      }
+
+      .policyItem a,
+      .securityItem a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .policyItem a:hover,
+      .securityItem a:hover {
+        color: $primary_color;
+      }
+    }
+  }
+}
+
+.policyTitle {
+  font-weight: bold;
+  font-size: 1.6rem;
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+.social {
+  .subscribeContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: #333;
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    button {
+      background-color: #1f2937;
+      color: $white_color;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $primary_color;
+      }
+    }
+    .wrapperYoutube {
+      display: flex;
+      justify-content: flex-end;
+      align-items: end;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      margin-bottom: 0.8rem;
+      margin-left: auto;
+      iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        box-shadow: 0 4px 8px $gray_color;
+        border: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .intro {
+    order: 2;
+  }
+  .policy {
+    order: 1;
+  }
+}

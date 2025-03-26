@@ -3,9 +3,9 @@ import styles from './styles.module.scss';
 import { dataBoxIcon } from '../constants';
 
 function SocialMedia() {
-  const { socialMdeia } = styles;
+  const { socialMedia } = styles;
   return (
-    <div className={socialMdeia}>
+    <div className={socialMedia}>
       {dataBoxIcon.map((data, index) => {
         return (
           <BoxIcon

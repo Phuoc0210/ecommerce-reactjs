@@ -1,6 +1,6 @@
 @use '@styles/mixins.module' as *;
 @use '@styles/variables.module' as *;
 
-.socialMdeia {
-  @include flex_custom(center, center, 5px);
+.socialMedia {
+  @include flex_custom(start, center, 5px);
 }
