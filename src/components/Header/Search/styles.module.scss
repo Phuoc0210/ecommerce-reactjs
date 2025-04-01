@@ -5,6 +5,8 @@
   flex: 1;
   display: flex;
   height: 60%;
+  margin-right: 2rem;
+  margin-top: 2rem;
   .searchInput {
     flex: 1;
     border: 1px solid $secondary_color;
@@ -25,7 +27,7 @@
     }
   }
   .searchButton:hover {
-    background-color: $secondary_color;
+    background-color: $dark_blue_40;
   }
 }
 @media (max-width: 991px) {

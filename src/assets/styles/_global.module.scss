@@ -6,10 +6,40 @@
   padding: 0;
   border: 0;
 }
+/* > PC low resolution */
+@media (min-width: 1240px) {
+  html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', monospace;
+    box-sizing: border-box;
+  }
+}
 
-html {
-  font-size: 62.5%;
-  line-height: 1.6rem;
-  font-family: 'Roboto', monospace;
-  box-sizing: border-box;
+@media (max-width: 740px) {
+  html {
+    font-size: 40%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', monospace;
+    box-sizing: border-box;
+  }
+}
+/* Tablet - PC low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+  html {
+    font-size: 50%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', monospace;
+    box-sizing: border-box;
+  }
+}
+
+/* > PC low resolution */
+@media (min-width: 1024px) and (max-width: 1239px) {
+  html {
+    font-size: 56.25%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', monospace;
+    box-sizing: border-box;
+  }
 }

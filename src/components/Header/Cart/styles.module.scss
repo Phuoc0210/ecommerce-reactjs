@@ -35,8 +35,8 @@
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 50%;
-    width: 20%;
-    height: 20%;
+    width: 3.2rem;
+    height: 2.4em;
     @include flex_custom(center, center, 0);
     transition: transform 0.2s ease-in-out;
   }
@@ -46,14 +46,27 @@
   .cart {
     padding: 0;
     @include flex_custom(center, center, 0);
+    background-color: rgba(0, 0, 0, 0);
     .cartText {
       display: none;
     }
+    .cartIcon {
+      font-size: 3.2rem;
+      color: $primary_color;
+    }
     .cartCount {
-      top: 20%;
-      right: 10%;
-      width: 30%;
-      height: 20%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: white;
+      color: $primary_color;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.2em;
+      @include flex_custom(center, center, 0);
+      transition: transform 0.2s ease-in-out;
     }
     .cartIcon {
       svg {
@@ -61,7 +74,7 @@
       }
     }
     &:hover {
-      background: $primary_color;
+      background: $secondary_color;
     }
   }
 }
@@ -71,5 +84,24 @@
     .cartText {
       display: none;
     }
+    .cartCount {
+      position: absolute;
+      top: 8%;
+      right: 4%;
+      background: white;
+      color: $primary_color;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 2.4rem;
+      height: 1.8em;
+      @include flex_custom(center, center, 0);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}
+@media (max-width: 593px) {
+  .cart {
+    background-color: rgba(0, 0, 0, 0);
   }
 }

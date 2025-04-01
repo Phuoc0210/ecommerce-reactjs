@@ -1,12 +1,12 @@
 import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import styles from './styles.module.scss';
-function MainLayout({ children }) {
-  const { container } = styles;
+function HomePageLayout({ children }) {
+  const { container, header } = styles;
 
   return (
     <div className={container}>
-      <div>
+      <div className={header}>
         <Header />
       </div>
       {children}
@@ -15,4 +15,4 @@ function MainLayout({ children }) {
   );
 }
 
-export default MainLayout;
+export default HomePageLayout;

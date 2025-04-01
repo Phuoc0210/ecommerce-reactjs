@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import Logo from '@img/logo.png';
-import LogoMb from '@img/logomb.png';
+import LogoMb from '@img/logoMobile.png';
 import styles from './styles.module.scss';
 import Search from './Search/Search';
 import { IoMenu } from 'react-icons/io5';
@@ -25,6 +25,12 @@ function Header() {
     menu,
   } = styles;
   const [isOpen, setIsOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    const token = window.localStorage.getItem('accessToken');
+    setIsLogin(Boolean(token));
+  }, []);
+
   const navigate = useNavigate();
   return (
     <header>
@@ -40,17 +46,15 @@ function Header() {
               }}
             />
           </Col>
-          <Col
-            className={`${search} d-none d-lg-flex`}
-            style={{ flex: '1', display: 'flex', alignItems: 'center' }}
-          >
+          <Col className={`${search} d-none d-lg-flex`}>
             <Search />
-          </Col>
-          <Col lg='4' className={`${benefit} d-none d-xl-flex`}>
             <Benefits />
           </Col>
+          {/* <Col lg='3' className={`${benefit} d-none d-xl-flex`}>
+            <Benefits />
+          </Col> */}
           <Col lg='1' className={user}>
-            <Account isLoggedIn={true} />
+            <Account isLoggedIn={isLogin} />
           </Col>
           <Col lg='1' className={cart}>
             <Cart />
@@ -84,12 +88,12 @@ function Header() {
             <Cart />
           </Col>
         </Row>
-        <Row>
+        <Row className={`d-none d-lg-block`}>
           <Search />
         </Row>
       </Container>
 
-      <HeaderNavbar isOpen={isOpen} />
+      <HeaderNavbar isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }

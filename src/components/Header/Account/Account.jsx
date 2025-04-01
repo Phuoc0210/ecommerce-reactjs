@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import styles from './styles.module.scss';
+import { Link } from 'react-router-dom';
 
 function Account({ isLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,19 +22,19 @@ function Account({ isLoggedIn }) {
           {isLoggedIn ? (
             <>
               <li>
-                <a href='#'>Account</a>
+                <Link to='#'>Account</Link>
               </li>
               <li>
-                <a href='#'>Log Out</a>
+                <Link to='/'>Log Out</Link>
               </li>
             </>
           ) : (
             <>
               <li>
-                <a href='#'>Sign in</a>
+                <Link to='/login'>Sign in</Link>
               </li>
               <li>
-                <a href='#'>Sign up</a>
+                <Link to='/register'>Sign up</Link>
               </li>
             </>
           )}

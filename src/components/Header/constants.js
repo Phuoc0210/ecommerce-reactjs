@@ -20,20 +20,20 @@ const benefits = [
     bigTitle: '0',
     smallTitle: {
       line1: 'free',
-      line2: 'shipping for',
-      line3: 'orders from 500k',
+      line2: 'shipping',
+      line3: '500K+',
     },
   },
   {
-    bigTitle: '3',
+    bigTitle: '7',
     smallTitle: {
       line1: 'days',
-      line2: '1-to-1 exchange',
-      line3: 'if defective',
+      line2: 'exchange',
+      line3: '',
     },
   },
   {
-    bigTitle: '22',
+    bigTitle: '5',
     smallTitle: {
       line1: 'years',
       line2: 'quality',

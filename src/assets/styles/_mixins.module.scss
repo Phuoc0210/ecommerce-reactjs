@@ -22,14 +22,13 @@
   width: $w;
   height: $h;
 }
-@mixin button_default() {
+@mixin button_default($w: 161px, $h: 48px) {
+  width: $w;
+  height: $h;
+  border: 1px solid $text_color;
+  border-radius: 58px;
+  background-color: rgba(0, 0, 0, 0);
   display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
   text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }

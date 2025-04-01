@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { dataMenu } from '../constants';
 import styles from './styles.module.scss';
 
-function HeaderNavbar({ isOpen }) {
+function HeaderNavbar({ isOpen, setIsOpen }) {
   const {
     navbar,
     navbar_item,
@@ -11,12 +11,19 @@ function HeaderNavbar({ isOpen }) {
     navbar_show,
     navbar_hide,
   } = styles;
+  console.log(isOpen);
 
   return (
     <nav className={`${navbar} ${isOpen ? navbar_show : ''}`}>
       <ul className={navbar_menu}>
         {dataMenu.map((item, index) => (
-          <li key={index} className={navbar_item}>
+          <li
+            key={index}
+            className={navbar_item}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             <Link to={item.href} className={navbar_link}>
               {item.content}
             </Link>

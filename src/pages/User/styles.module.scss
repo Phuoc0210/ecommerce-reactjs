@@ -1,0 +1,81 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+.container {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+}
+.auth {
+  @include flex_custom(center, center, 0);
+  .auth_form {
+    background-color: $white_color;
+    padding: 3.2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    .authTitle {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 0.08rem;
+    }
+    .formGroup {
+      margin-bottom: 1.2rem;
+      label {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      input {
+        min-width: 330px;
+        font-size: 1.4rem;
+        min-height: 40px;
+        font-weight: 400;
+      }
+    }
+    .submitButton {
+      margin: 0.8rem 0;
+      background-color: $text_color;
+      border: 1px solid $gray_color;
+      font-weight: 600;
+      font-size: 1.3rem;
+      width: 100%;
+      border-radius: 4px;
+      height: 4rem;
+    }
+    .forgot {
+      @include flex_custom(end, center, 0);
+      font-size: 1.2rem;
+    }
+    .signup {
+      @include flex_custom(center, center, 0);
+      font-size: 1.2rem;
+    }
+    .submitButton:hover {
+      background-color: $primary_color;
+    }
+    .socialTitle {
+      @include flex_custom(end, center, 0);
+      margin-top: 1.6rem;
+      font-size: 1.2rem;
+      text-align: center;
+      &::before,
+      &::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid #ccc;
+        margin: 0 10px;
+      }
+    }
+    .socialLogin {
+      @include flex_custom(space-around, center, 0);
+      border-radius: none;
+      button {
+        min-width: 140px;
+        font-size: 1.4rem;
+        @include flex_custom(center, center, 0.8rem);
+      }
+    }
+    .authback {
+      @include flex_custom(end, center, 8px);
+      font-size: 1.2rem;
+    }
+  }
+}

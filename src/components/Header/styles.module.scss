@@ -28,15 +28,24 @@
     svg {
       width: 3.5rem;
       height: 3.5rem;
-      color: $white_color;
+      color: $primary_color;
       cursor: pointer;
     }
   }
 }
 
 @media (max-width: 991px) {
+  .container {
+    position: static;
+  }
   header {
-    background-color: $primary_color;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .img_logo {
+    ::after {
+      content: '';
+      background-color: $primary_color;
+    }
   }
 }
 

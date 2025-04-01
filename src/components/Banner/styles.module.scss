@@ -1,0 +1,90 @@
+@use '@styles/mixins.module' as *;
+@use '@styles/variables.module' as *;
+
+.container {
+  background-image: url(../../assets/img/banner.png);
+  width: 100%;
+  min-height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  .content {
+    position: absolute;
+    top: calc(100vw * (695 / 1440) / 3);
+    width: 38vw;
+    .primaryTitle {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    .subTitle {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+    .paragraph {
+      font-size: 1.4rem;
+    }
+    .action {
+      margin-top: 2.4rem;
+      @include flex_custom(start, center, 2rem);
+      .btn {
+        @include button_default(16rem, 4.2rem);
+      }
+      .btnView:hover {
+        background-color: $primary_color;
+        color: $white_color;
+      }
+
+      .btnExplore:hover {
+        background-color: $primary_color;
+        color: $white_color;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    background-image: url(../../assets/img/bannerMobile.png);
+    width: 100%;
+    min-height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include flex_custom(center, center);
+    .content {
+      position: absolute;
+      top: calc(100vw * (695 / 1440) / 2);
+      width: 100vw;
+      text-align: center;
+      .primaryTitle {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+      .subTitle {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      .paragraph {
+        font-size: 1.4rem;
+      }
+      .action {
+        margin-top: 2.4rem;
+        @include flex_custom(center, center, 2rem);
+        .btn {
+          @include flex_custom(center, center, 2rem);
+          @include button_default(16rem, 4.2rem);
+        }
+        .btnView:hover {
+          background-color: $primary_color;
+          color: $white_color;
+        }
+        .btnExplore {
+          @include flex_custom(center, center, 0.2rem);
+          background-color: $primary_color;
+          color: $white_color;
+        }
+        .btnExplore:hover {
+          background-color: $primary_color;
+          color: $white_color;
+        }
+      }
+    }
+  }
+}
