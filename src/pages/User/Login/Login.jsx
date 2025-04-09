@@ -27,7 +27,7 @@ function Login() {
 
     try {
       const response = await authApi.login(username, password);
-      console.log(response);
+
       const { success, message, accessToken, user } = response.data;
 
       if (success) {
