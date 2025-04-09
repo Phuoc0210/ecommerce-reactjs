@@ -11,7 +11,6 @@ function HeaderNavbar({ isOpen, setIsOpen }) {
     navbar_show,
     navbar_hide,
   } = styles;
-  console.log(isOpen);
 
   return (
     <nav className={`${navbar} ${isOpen ? navbar_show : ''}`}>
