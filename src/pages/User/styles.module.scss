@@ -18,19 +18,6 @@
       letter-spacing: 0.08rem;
       text-transform: uppercase;
     }
-    .formGroup {
-      margin-bottom: 1.2rem;
-      label {
-        font-size: 1.4rem;
-        font-weight: 600;
-      }
-      input {
-        min-width: 330px;
-        font-size: 1.4rem;
-        min-height: 40px;
-        font-weight: 400;
-      }
-    }
     .submitButton {
       margin: 0.8rem 0;
       background-color: $text_color;
@@ -82,12 +69,6 @@
       font-size: 1.4rem;
       margin: 1.2rem 0;
       margin-right: 2.4rem;
-    }
-    .errorMessage {
-      color: $pink_red;
-      font-size: 1.2rem;
-      margin-top: 2px;
-      font-weight: 400;
     }
   }
 }

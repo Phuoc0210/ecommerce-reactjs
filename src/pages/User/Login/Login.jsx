@@ -6,13 +6,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import authApi from '@/services/authAPI';
 import notify from '@/services/notifyToast';
+import MyFormGroup from '@/components/InputForm/InputForm';
 function Login() {
   const {
     container,
     auth,
     auth_form,
     authTitle,
-    formGroup,
     forgot,
     signup,
     socialTitle,
@@ -22,6 +22,25 @@ function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const usernameField = {
+    label: 'Username',
+    name: 'username',
+    type: 'text',
+    placeholder: 'Enter your username',
+    required: true,
+    value: username,
+    onChange: setUsername,
+  };
+
+  const passwordField = {
+    label: 'Password',
+    name: 'password',
+    type: 'password',
+    placeholder: 'Enter your password',
+    required: true,
+    value: password,
+    onChange: setPassword,
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -47,30 +66,8 @@ function Login() {
       <Container className={auth}>
         <Form className={auth_form} onSubmit={handleLogin} key='login-form'>
           <h3 className={authTitle}>Log In</h3>
-          <Form.Group className={formGroup} controlId='username'>
-            <Form.Label>Username</Form.Label>
-            <Form.Control
-              type='text'
-              placeholder='Enter your username'
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-              value={username}
-              required
-            />
-          </Form.Group>
-          <Form.Group className={formGroup} controlId='password'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Enter your password'
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              value={password}
-              required
-            />
-          </Form.Group>
+          <MyFormGroup {...usernameField} />
+          <MyFormGroup {...passwordField} />
           <div className={forgot}>
             <Link to='/forgot'>Forgot password?</Link>
           </div>

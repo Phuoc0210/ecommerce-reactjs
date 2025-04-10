@@ -1,8 +1,5 @@
 import authInstance from '@/configs/authInstance';
 const authApi = {
-  demo: () => {
-    return authInstance.post('/demo');
-  },
   register: (data) => {
     return authInstance.post('/register', data);
   },
@@ -17,6 +14,15 @@ const authApi = {
   },
   logout: () => {
     return authInstance.post('/logout', {}, { withCredentials: true });
+  },
+  requestOtp: (data) => {
+    return authInstance.post('/send-verify-otp', data);
+  },
+  verifyOPT: (data) => {
+    return authInstance.post('/verify-otp', data);
+  },
+  resetPasswordWithOtp: (data) => {
+    return authInstance.post('/reset-password', data);
   },
 };
 

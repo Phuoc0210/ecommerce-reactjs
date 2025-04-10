@@ -24,6 +24,9 @@ function MyFormGroup({
         defaultValue={value}
         isInvalid={!!error}
         required={required}
+        onChange={(e) => {
+          onChange(e.target.value);
+        }}
       />
       {error && (
         <Form.Control.Feedback type='invalid' className={errorMessage}>

@@ -52,7 +52,7 @@ function SignUp() {
       const result = response.data;
 
       if (result?.message) {
-        formRef.current.reset(); // Reset form HTML
+        formRef.current.reset();
         notify('success', result.message, 'bottom-right');
         navigate('/login');
       }

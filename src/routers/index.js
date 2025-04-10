@@ -7,8 +7,7 @@ import Shop from '@/pages/Shop/Shop';
 import Contact from '@/pages/Contact/Contact';
 import Login from '@/pages/User/Login/Login';
 import SignUp from '@/pages/User/SignUp/SignUp';
-import Reset from '@/pages/User/Reset/Reset';
-
+import ForgotPassword from '@/pages/User/Reset/ForgotPassword';
 const publicRoute = [
   { path: '/', component: HomePage, layout: HomePageLayout },
   { path: '/home', component: HomePage, layout: HomePageLayout },
@@ -17,7 +16,7 @@ const publicRoute = [
   { path: '/contact', component: Contact, layout: MainLayout },
   { path: '/login', component: Login, layout: MainLayout },
   { path: '/register', component: SignUp, layout: MainLayout },
-  { path: '/forgot', component: Reset, layout: MainLayout },
+  { path: '/forgot', component: ForgotPassword, layout: MainLayout },
 ];
 
 const privateRoute = [];
